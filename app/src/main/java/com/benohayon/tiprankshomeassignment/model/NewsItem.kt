@@ -1,5 +1,5 @@
 package com.benohayon.tiprankshomeassignment.model
 
-class NewsPost {
+class NewsItem {
 
 }
