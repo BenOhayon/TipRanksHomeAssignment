@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TipRanksHomeAssignment</string>
+
+    // News activity
+    <string name="news_activity_search_box_hint">Search news…</string>
+
+    // News Post list item
+    <string name="news_post_list_item_promotion_bar_text">Go to Promotion</string>
+</resources>
