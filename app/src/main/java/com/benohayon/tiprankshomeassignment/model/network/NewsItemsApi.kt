@@ -4,7 +4,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface NewsItemsApiInterface {
+interface NewsItemsApi {
 
     @GET("news/posts")
     fun getNews(

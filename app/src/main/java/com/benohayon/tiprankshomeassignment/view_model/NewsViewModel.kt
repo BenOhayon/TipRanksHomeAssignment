@@ -2,6 +2,7 @@ package com.benohayon.tiprankshomeassignment.view_model
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.benohayon.tiprankshomeassignment.PAGINATION_PAGE_SIZE
 import com.benohayon.tiprankshomeassignment.model.TipRanksRepository
 import com.benohayon.tiprankshomeassignment.model.models.NewsItem
 
@@ -12,10 +13,10 @@ class NewsViewModel : ViewModel() {
         MutableLiveData<List<NewsItem>>()
     }
 
-    fun getNewsItems(
+    fun loadNewsItems(
+        searchQuery: String,
         pageNumber: Int,
-        itemsPerPage: Int,
-        searchQuery: String
+        itemsPerPage: Int = PAGINATION_PAGE_SIZE
     ) {
         repository.getNewsItems(pageNumber, itemsPerPage, searchQuery, { newsItems ->
             newsItemsLiveData.postValue(newsItems)

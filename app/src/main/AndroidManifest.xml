@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipRanksHomeAssignment">
         <activity
+            android:name=".view.activities.NewsItemDisplayActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.activities.NewsActivity"
             android:exported="true">
             <intent-filter>
