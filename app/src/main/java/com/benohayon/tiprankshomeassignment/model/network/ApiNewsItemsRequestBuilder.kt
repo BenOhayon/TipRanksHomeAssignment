@@ -24,7 +24,7 @@ class ApiNewsItemsRequestBuilder : ApiRequestBuilder() {
         onSuccess: (List<NewsItem>?) -> Unit = {},
         onFailure: (String?) -> Unit = {}
     ) {
-        val newsItemsApiInterface = requestBuilder.create(NewsItemsApiInterface::class.java)
+        val newsItemsApiInterface = requestBuilder.create(NewsItemsApi::class.java)
         val getNewsItemsCall = newsItemsApiInterface.getNews(pageNumber, perPage, searchQuery)
         getNewsItemsCall.enqueue(object: Callback<Any?> {
             override fun onResponse(

@@ -1,5 +1,11 @@
 package com.benohayon.tiprankshomeassignment
 
+  ///////////////////
+ // Activity keys //
+///////////////////
+
+const val DISPLAY_URL = "displayUrl"
+
   ///////////////
  // Json keys //
 ///////////////
@@ -27,3 +33,14 @@ const val KEY_SEO = "seo"
 const val KEY_THUMBNAIL = "thumbnail"
 const val KEY_AUTHOR = "author"
 const val KEY_CATEGORY = "category"
+
+
+  ////////////
+ // Values //
+////////////
+
+const val PROMOTED_ITEM_OFFSET = 3
+const val PAGINATION_PAGE_SIZE = 20
+const val PAGINATION_LIST_SCROLL_THRESHOLD = 5
+
+const val PROMOTION_DIRECT_URL = "https://www.tipranks.com"
