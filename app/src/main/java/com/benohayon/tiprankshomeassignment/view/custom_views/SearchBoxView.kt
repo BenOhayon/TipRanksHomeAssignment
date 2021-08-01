@@ -14,11 +14,19 @@ import com.benohayon.tiprankshomeassignment.R
 
 class SearchBoxView : LinearLayout {
 
+    interface SearchBoxViewListener {
+        fun onSearchClick(searchQuery: String)
+        fun onTextChanged()
+    }
+
     private var editText: EditText? = null
     private var searchButton: ImageView? = null
     private var clearButton: ImageView? = null
 
-    private var onSearch: (String?) -> Unit = {}
+    private var searchListener: SearchBoxViewListener? = null
+
+    val searchQuery: String?
+        get() = editText?.text?.toString()
 
     constructor(context: Context) : super(context) {
         initialize(context)
@@ -62,6 +70,10 @@ class SearchBoxView : LinearLayout {
             true
         }
 
+        editText?.addTextChangedListener {
+            searchListener?.onTextChanged()
+        }
+
         searchButton?.setOnClickListener {
             if (editText?.text?.toString()?.isNotEmpty() == true)
                 performSearch()
@@ -70,11 +82,11 @@ class SearchBoxView : LinearLayout {
 
     private fun performSearch() {
         hideSoftKeyboard()
-        onSearch.invoke(editText?.text?.toString())
+        searchListener?.onSearchClick(editText?.text?.toString()!!)
     }
 
-    fun setOnSearchListener(block: (String?) -> Unit) {
-        this.onSearch = block
+    fun setOnSearchListener(searchListener: SearchBoxViewListener) {
+        this.searchListener = searchListener
     }
 
     private fun hideSoftKeyboard() {
